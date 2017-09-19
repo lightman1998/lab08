@@ -15,15 +15,17 @@ $ open https://git-scm.com #Открыть веб страницу по данн
 
 ## Tutorial
 
-```ShellSession
 #Устанавливаем нужные параметры для дальнейшей работы
+
+```ShellSession
 $ export GITHUB_USERNAME=lightman1998 #Задаем значение переменной GITHUB_USERNAME
 $ export GITHUB_EMAIL=kall-lightman@yandex.ru #Задаем значение переменной GITHUB_EMAIL
 $ alias edit=vi #Выбираем редактор
 ```
 
-```ShellSession
 #Работа с репозиторием, при помощи pull/push, add, status и других комманд
+
+```ShellSession
 $ mkdir lab03 && cd lab03 #Создаем репо lab03 и переходим в него при помощи команды cd
 $ git init #Создание репозитория в существующем каталоге
 $ git config --global user.name ${GITHUB_USERNAME} #При помощи config устанавливаем дальнейшие параметры. Для это используем флаг (--global) и прописываем для user.name нашу текущую переменную GITHUB_USERNAME. Так как мы используем флаг (--global), то мы можем делать эту настройку единожды; для остальных случаев данные настройки будут сохранены
@@ -47,14 +49,17 @@ $ git push origin master #Отправили ветку master на сервер
 *.swp
 ```
 
-```ShellSession
 #Еще немного работы с репо
+
+```ShellSession
 $ git pull origin master #Извлекли данные с удаленного сервера и слили их с текущей работой. Была выдана ошибка следующего характера: fatal: Couldn't find remote ref to
 $ git log #Просмотр changelog'a
 ```
 
-```ShellSession
 #Создание каталогов и создание и запись файлов
+
+```ShellSession
+
 $ mkdir sources #Создали каталог sources
 $ mkdir include #Создали каталог include
 $ mkdir examples #Создали каталог examples
@@ -71,8 +76,9 @@ void print(const std::string& text, std::ofstream& out) {
 EOF
 ```
 
-```ShellSession
 #Cоздание и запись файлов
+
+```ShellSession
 $ cat > include/print.hpp <<EOF #Создаем файл print.hpp в папке sources, заполняем его следующим кодом, оканчивающимся EOF - end of file
 #include <string>
 #include <fstream>
@@ -83,8 +89,9 @@ void print(const std::string& text, std::ofstream& out);
 EOF
 ```
 
-```ShellSession
 #Cоздание и запись файлов
+
+```ShellSession
 $ cat > examples/example1.cpp <<EOF #Создаем файл example1.cpp в папке sources, заполняем его следующим кодом, оканчивающимся EOF - end of file
 #include <print.hpp>
 
@@ -94,8 +101,9 @@ int main(int argc, char** argv) {
 EOF
 ```
 
-```ShellSession
 #Cоздание и запись файлов
+
+```ShellSession
 $ cat > examples/example2.cpp <<EOF #Создаем файл example2.cpp в папке sources, заполняем его следующим кодом, оканчивающимся EOF - end of file
 #include <fstream>
 #include <print.hpp>
@@ -107,13 +115,15 @@ int main(int argc, char** argv) {
 EOF
 ```
 
-```ShellSession
 #Редактирование
+
+```ShellSession
 $ edit README.md #Редактирование файла README.md
 ```
 
-```ShellSession
 #Завершение работы
+
+```ShellSession
 $ git status #Проверка статуса
 $ git add . #Начало остлеживания версионного изменения для текущей директории
 $ git commit -m"added sources" #Закоммитили изменения
